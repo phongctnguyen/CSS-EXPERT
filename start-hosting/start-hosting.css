@@ -11,6 +11,10 @@ main {
 }
 
 .signup-form {
+  display: grid;
+  grid-auto-rows: 2rem;
+  grid-row-gap: 0.5rem;
+
   padding: 1rem;
 }
 
@@ -82,13 +86,23 @@ main {
 
 .signup-form button[type="submit"] {
   display: block;
-
-  margin-top: 1rem;
 }
 
 @media (min-width: 40rem) {
   .signup-form {
+    grid-template-columns: 10rem auto;
+    grid-row-gap: 1rem;
+    grid-column-gap: 5rem;
+
     margin: auto;
-    width: 25rem;
+    width: 30rem;
+  }
+
+  .signup-form [id="title"] {
+    grid-column: span 1;
+  }
+
+  .signup-form__checkbox {
+    grid-column: span 2;
   }
 }

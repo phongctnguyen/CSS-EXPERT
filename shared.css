@@ -6,15 +6,29 @@
   box-sizing: border-box;
 }
 
+html {
+	/* height: 100%; */
+}
+
 body {
+	display: grid;
+	grid-template-rows: 3.5rem auto fit-content(8rem);
+	/* grid-template-areas: "header"
+											"main"
+											"footer"; */
+
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	
 	margin: 0;
+	/* height: 100%; */
 }
 
 main {
-	min-height: calc(100vh - 3.5rem - 8rem);
-	margin-top: 3.5rem;
+	grid-row: 2 / 3;
+	/* grid-area: main; */
+
+	/* min-height: calc(100vh - 3.5rem - 8rem); */
+	/* margin-top: 3.5rem; */
 }
 
 .backdrop {
@@ -160,6 +174,9 @@ main {
 }
 
 .main-footer {
+	grid-row: 3 / -1;
+	/* grid-area: footer; */
+
 	background-color: black;
 
 	padding: 32px;
