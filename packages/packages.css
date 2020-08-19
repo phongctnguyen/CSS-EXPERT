@@ -34,6 +34,8 @@ main {
   border: 4px solid #0e4f1f;
   border-left: none;
   margin: 1rem 0;
+
+  overflow: hidden;
 }
 
 .package:hover,
@@ -55,7 +57,7 @@ main {
 
 .package__badge {
   position: absolute;
-  top: 0;
+  top: 1rem;
   right: 0;
 
   font-size: 0.8rem;
@@ -63,9 +65,13 @@ main {
   color: white;
   background-color: #ff5454;
 
+  width: 12rem;
   padding: 0.5rem;
+  margin: 0;
 
-  margin: 1.2rem;
+  text-align: center;
+  transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+  transform-origin: center;
 }
 
 .package__subtitle {
