@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+:root {
+	--dark-green: #0e4f1f;
+	--highlight-color: #ff1b68;
+}
+
 * {
   /* margin: 0; */
   /* padding: 0; */
@@ -43,9 +48,14 @@ main {
 	height: 100vh;
 
 	z-index: 100;
+	opacity: 0;
+	transition: opacity 0.2s linear;
 }
 
 .main-header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -53,7 +63,7 @@ main {
 	top: 0;
 	left: 0;
 
-  color: #0e4f1f;
+  color: var(--dark-green);
   background-color: #2dff5c;
 
   width: 100%;
@@ -66,7 +76,7 @@ main {
   font-weight: bold;
 	font-size: 22px;
 
-	color: #0e4f1f;
+	color: var(--dark-green);
 
 	text-decoration: none;
 }
@@ -126,7 +136,7 @@ main {
 
   padding: 3px 0;
 
-  color: #0e4f1f;
+  color: var(--dark-green);
 
   text-decoration: none;
 }
@@ -138,10 +148,14 @@ main {
   border-bottom: 5px solid white;
 }
 
+.main-nav__item--cta {
+	animation: wiggle 200ms 1s 4 backwards;
+}
+
 .main-nav__item--cta a, 
 .mobile-nav__item--cta a {	
 	color: white;
-	background-color: #ff1b68;
+	background-color: var(--highlight-color);
 	
   padding: 8px 16px;
   border-radius: 8px;
@@ -151,7 +165,7 @@ main {
 .main-nav__item--cta a:active 
 .mobile-nav__item--cta a:hover,
 .mobile-nav__item--cta a:active {
-	color: #ff1b68;
+	color: var(--highlight-color);
 	background-color: white;
 	
   border: none;
@@ -213,10 +227,10 @@ main {
 	font: inherit;
 	font-weight: bold;
 
-	background-color: #0e4f1f;
+	background-color: var(--dark-green);
 	color: white;
 
-	border: 1.5px solid #0e4f1f;
+	border: 1.5px solid var(--dark-green);
 	border-radius: 8px;
 	padding: 8px;
 
@@ -226,7 +240,7 @@ main {
 .button:hover,
 .button:active {
 	background: white;
-	color: #0e4f1f;
+	color: var(--dark-green);
 }
 
 .button:focus {
@@ -279,6 +293,9 @@ main {
 
 .open {
 	display: block !important;
+
+	opacity: 1 !important;
+	transform: translateY(0) !important;
 }
 
 @media(min-width: 40rem) {
@@ -291,3 +308,14 @@ main {
 		margin: 0 1rem;
 	}
 }
+
+@keyframes wiggle {
+	from {
+		transform: rotateZ(0);
+	}
+
+	to {
+		transform: rotateZ(10deg);
+	}
+}
+
